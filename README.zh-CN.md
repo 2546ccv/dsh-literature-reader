@@ -96,6 +96,19 @@ node test/client-test2.cjs                                 # 快捷键 + PDF 路
 工作原理 / 代码结构逐文件讲解 / 配置详解 / 开发扩展指南 / 常见问题 FAQ：
 👉 **[docs/中文详解.md](docs/中文详解.md)**
 
+## 🖥️ 在浏览器任意网页中使用（扩展）
+
+插件除了在 DSH 网页面板内使用，还提供一个**本机后台 HTTP 端点** `/lit-http/ask`（复用 DSH 的模型与 token 策略），配合同仓库的 **Chrome/Edge 扩展**，即可在**任意网页**（arXiv、浏览器内 PDF、Google Scholar、WPS 网页版等）选中文字弹浮窗解释/翻译：
+
+```bash
+# 安装扩展：打开 chrome://extensions 或 edge://extensions
+# 开启开发者模式 → 加载已解压的扩展程序 → 选择 extension/ 目录
+```
+
+- 详情见 **[extension/README.zh-CN.md](extension/README.zh-CN.md)**
+- 后端要求：DSH web 在本机运行（127.0.0.1:3080）
+- 快捷键同面板：`Alt+E` 解释、`Alt+T` 翻译
+
 ## 许可证
 
 MIT

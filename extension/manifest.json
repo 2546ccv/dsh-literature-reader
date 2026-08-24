@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "dsh-literature-reader",
+  "version": "0.1.0",
+  "description": "Select text on any page and get a concept explanation or translation via the local DeepSeek Harness backend (http://127.0.0.1:3080/lit-http). Hotkeys: Alt+E explain, Alt+T translate.",
+  "permissions": ["storage"],
+  "host_permissions": ["http://127.0.0.1:3080/*", "http://localhost:3080/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["popup.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
