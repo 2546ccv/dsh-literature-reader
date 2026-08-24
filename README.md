@@ -2,6 +2,8 @@
 
 **Literature reading assistant for DeepSeek Harness Web** — read PDFs (or pasted text) inside the DSH web GUI, select a term or passage with the mouse, and get a **concept explanation** or **translation** in a popup right next to the selection. Hotkeys: `Alt+L` panel, `Alt+E` explain, `Alt+T` translate.
 
+> 📖 **中文详解文档**（工作原理 / 代码结构 / 配置 / 开发扩展 / FAQ）：[docs/中文详解.md](docs/中文详解.md)
+
 ## Why it saves tokens
 
 - The plugin calls the model through a **one-shot `ctx.llm.stream()`** on the host: the request **never enters the session history** and **never occupies the agent's context window**.
