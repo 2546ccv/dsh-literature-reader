@@ -112,6 +112,21 @@ node test/client-test2.cjs                                 # 快捷键 + PDF 路
 - 后端要求：DSH web 在本机运行（127.0.0.1:3080）
 - 快捷键同面板：`Alt+E` 解释、`Alt+T` 翻译
 
+## ⌨️ 桌面全局快捷键（WPS / Word / 任何软件，AutoHotkey）
+
+在 **WPS、Word、浏览器、PDF 阅读器**等任意 Windows 软件里，选中文字按快捷键，光标旁弹出小窗口直接解释/翻译——**无需把文件导入 DSH 面板**：
+
+| 操作 | 结果 |
+|---|---|
+| 选中文字 → `Alt+E` | 小窗口解释选中内容 |
+| 选中文字 → `Alt+T` | 小窗口翻译选中内容 |
+| `Alt+L` | 输入框手动输入 → 解释 |
+
+1. 安装 AutoHotkey v2（https://www.autohotkey.com）
+2. 双击 `scripts/lit-reader.ahk`（或 `scripts/启动文献助手.bat`）
+
+详情见 **[scripts/README.md](scripts/README.md)**。原理：模拟 Ctrl+C 取选中文字 → 调本机 `/lit-http/ask` 后台 → 弹出结果，复用 DSH 模型与 token 策略。
+
 ## 许可证
 
 MIT
@@ -238,6 +253,25 @@ explain/translate popup:
 - Docs: **[extension/README.zh-CN.md](extension/README.zh-CN.md)**
 - Backend requirement: DSH web running locally (127.0.0.1:3080)
 - Same hotkeys as the panel: `Alt+E` explain, `Alt+T` translate
+
+## ⌨️ Desktop global hotkeys (WPS / Word / any app, AutoHotkey)
+
+Select text in **any Windows app** (WPS, Word, browser, PDF reader) and press a
+hotkey — a small window pops up next to the cursor with the explanation or
+translation, **no file import needed**:
+
+| Action | Result |
+|---|---|
+| Select text → `Alt+E` | Popup explains the selection |
+| Select text → `Alt+T` | Popup translates the selection |
+| `Alt+L` | Input box for manual text → explain |
+
+1. Install AutoHotkey v2 (https://www.autohotkey.com)
+2. Run `scripts/lit-reader.ahk` (or `scripts/启动文献助手.bat`)
+
+Details: **[scripts/README.md](scripts/README.md)**. How it works: simulates
+Ctrl+C to grab the selection → calls the local `/lit-http/ask` backend →
+shows the result, reusing your DSH model and token-saving policy.
 
 ## License
 
